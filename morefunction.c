@@ -1,14 +1,29 @@
 #include "monty.h"
-
+/**
+ * _isdigit - checks if a string is a number
+ * @num: character to test
+ * Returns: 1 if it is a number, 0 otherwise
+*/
+int _isdigit(int num)
+{
+	if (num >= '0' && num <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
 /**
  * push - function to add a new element to the top of the stack
  * @stack - pointer to the first element on the stack
  * @line_number: current line number.
  * return: 0 if the element is successfully added to the stack.
 */
-int push(stack_t **stack, unsigned int line_number).
+int push(stack_t **stack, unsigned int line_number)
 {
-	char *numchar = NULL
+	char *numchar = NULL;
 	int num = 0;
 	stack_t *new_node = NULL;
 
@@ -22,9 +37,11 @@ int push(stack_t **stack, unsigned int line_number).
 	for (int i = 0; numchar[i] != '\0'; i++)
 	{
 		if (!_isdigit(numchar[i]) && numchar[i] != '-')
+        {
 			fprintf(stderr, "L%u: usage: push integer", line_number);
 			exit(EXIT_FAILURE);
-	}
+        }
+    }
 	num = atoi(numchar);
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
@@ -63,27 +80,11 @@ int pall(stack_t **stack)
     return (0);
 }
 /**
- * _isdigit - checks if a string is a number
- * @num: character to test
- * Returns: 1 if it is a number, 0 otherwise
-*/
-int _isdigit(int num).
-{
-	if (num >= '0' && num <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-/**
  * free_all - frees everything left over
  * @stack: pointer to the first element of the stack
  * @buffer: is the imput
 */
-void free_all(stack_t *stack, char *buffer).
+void free_all(stack_t *stack, char *buffer)
 {
 	while (stack != NULL)
 	{
@@ -102,7 +103,7 @@ void free_all(stack_t *stack, char *buffer).
 */
 int main(int argc, char **argv)
 {
-	stack_t *stack = NULL
+	stack_t *stack = NULL;
 	char *buffer = NULL, *code = NULL;
 	size_t buffsize = 0;
 	unsigned int line_number = 0;
@@ -136,10 +137,11 @@ int main(int argc, char **argv)
 			add(&stack, line_number);
 		else if (strcmp(code, "nop") == 0)
 			nop(&stack);
-		else if not
+		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s", line_number, code);
-			exit(EXIT_FAILURE); } }
+			exit(EXIT_FAILURE); } 
+        }
 	fclose(file), free_all(stack, buffer);
 	return (0); 
-    }
+}

@@ -43,3 +43,4 @@ int add (stack_t **stack, unsigned int line_number);
 int push(stack_t **stack, unsigned int line_number);
 int pall(stack_t **stack);
 void nop (stack_t **stack);
+#endif
