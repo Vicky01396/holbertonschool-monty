@@ -139,7 +139,7 @@ int main(int argc, char **argv)
 			nop(&stack);
 		else
 		{
-			fprintf(stderr, "L%u: unknown instruction %s", line_number, code);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, code);
 			exit(EXIT_FAILURE); }
 		}
 	fclose(file), free_all(stack, buffer);
