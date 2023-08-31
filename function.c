@@ -16,12 +16,12 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 /**
-* pop _ function to remove the top element from the stack.
- * @stack: pointer to the first element of the stack.
- * @line_number: number of the current line.
- * Return: 0 if the element is successfully removed.
+* pop - function to remove the top element from the stack.
+* @stack: pointer to the first element of the stack.
+* @line_number: number of the current line.
+* Return: 0 if the element is successfully removed.
 */
-int pop (stack_t **stack, unsigned int line_number)
+int pop(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 		 fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
@@ -40,7 +40,7 @@ int pop (stack_t **stack, unsigned int line_number)
  * @line_number: number of the current line
  * Returns: 0 if both elements are swapped
 */
-void swap (stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL || (*stack)->next == NULL)
 	{

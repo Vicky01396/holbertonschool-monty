@@ -4,9 +4,9 @@
  * @num: character to test
  * Returns: 1 if it is a number, 0 otherwise
 */
-int _isdigit(int num)
+int _isdigit(int a)
 {
-    if (num >= '0' && num <= '9')
+    if (a >= '0' && a <= '9')
     {
         return (1);
     }
@@ -27,7 +27,7 @@ int push(stack_t **stack, unsigned int line_number)
     int num = 0;
     stack_t *new_node = NULL;
 
-    numchar = strtok(NULL, "\t\n");
+    numchar = strtok(NULL, " \t\n");
 
     if (numchar == NULL)
     {
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE); }
     while (getline(&buffer, &buffsize, file) != -1)
     {
-        line_number++, code = strtok(buffer, "\t\n");
+        line_number++, code = strtok(buffer, " \t\n");
         if (code == NULL)
             continue;
         if (strcmp(code, "push") == 0)
