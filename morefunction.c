@@ -19,7 +19,7 @@ int _isdigit(int a)
  * push - function to add a new element to the top of the stack
  * @stack: pointer to the first element on the stack
  * @line_number: current line number.
- * return: 0 if the element is successfully added to the stack.
+ * Return: 0 if the element is successfully added to the stack.
 */
 int push(stack_t **stack, unsigned int line_number)
 {
