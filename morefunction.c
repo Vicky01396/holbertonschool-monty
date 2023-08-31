@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
  * _isdigit - checks if a string is a number
- * @num: character to test
- * Returns: 1 if it is a number, 0 otherwise
+ * @a: character to test
+ * Return: 1 if it is a number, 0 otherwise
 */
 int _isdigit(int a)
 {
@@ -17,7 +17,7 @@ int _isdigit(int a)
 }
 /**
  * push - function to add a new element to the top of the stack
- * @stack - pointer to the first element on the stack
+ * @stack: pointer to the first element on the stack
  * @line_number: current line number.
  * return: 0 if the element is successfully added to the stack.
 */
@@ -69,7 +69,7 @@ int pall(stack_t **stack)
 	if (current == NULL)
 		return (0);
 
-	while(current != NULL)
+	while (current != NULL)
 	{
 		if (current->n)
 			printf("%u\n", current->n);
@@ -140,8 +140,6 @@ int main(int argc, char **argv)
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, code);
-			exit(EXIT_FAILURE); }
-		}
+			exit(EXIT_FAILURE); } }
 	fclose(file), free_all(stack, buffer);
-	return (0);
-}
+	return (0); }
